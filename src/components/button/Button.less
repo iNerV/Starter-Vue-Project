@@ -1,0 +1,215 @@
+@import '../../assets/less/variables.less';
+@import "../../assets/less/mixins";
+
+.btn {
+  box-sizing: border-box;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: @field-padding-top @field-padding-horizontal @field-padding-bottom;
+  white-space: nowrap;
+  cursor: pointer;
+  vertical-align: middle;
+  user-select: none;
+  text-align: center;
+  font-size: 1em;
+  font-family: inherit;
+  line-height: @line-height;
+  text-decoration: none;
+  text-transform: none;
+  border-radius: @border-radius;
+  min-height: 2.125em;
+  border: 1px solid @gray-lighter;
+  color: @text-color;
+  background: transparent none;
+
+  &__icon {
+    margin-right: 5px;
+
+    &--link {
+      vertical-align: text-bottom;
+    }
+  }
+
+  &--hover,
+  &:hover,
+  &:focus{
+    text-decoration: none;
+    color: @text-color;
+    background-color: darken(@gray-lighter, 1%);
+    border-color: darken(@gray-light, 5%);
+  }
+
+  &--active,
+  &:active { //todo here has been :focus
+    text-decoration: none;
+    outline: 0; //fixme outline zero, fix it
+    box-shadow: none;
+    color: @text-color;
+    background-color: darken(@gray-lighter, 15%);
+    border-color: darken(@gray-light, 17%);
+  }
+
+  &--disabled,
+  &:disabled {
+    cursor: not-allowed;
+    opacity: @opacity;
+    color: @text-color;
+    background-color: @gray-lighter;
+    border-color: @gray-light;
+
+    a& {
+      pointer-events: none;
+    }
+  }
+
+
+  &--link {
+    display: inline;
+    height: inherit;
+    padding: 0;
+    margin: 0;
+    background: none;
+    border: none;
+    box-shadow: none;
+    line-height: inherit;
+
+    &--hover,
+    &:hover {
+      text-decoration: underline;
+      color: @text-color;
+      background: none;
+      border: none;
+      box-shadow: none;
+    }
+
+    &--active,
+    &:active,
+    &:focus {
+      text-decoration: underline;
+      outline: 0; //fixme outline zero, fix it
+      background: none;
+      border: none;
+      box-shadow: none;
+      color: darken(@text-color, 10%);;
+    }
+
+    &--disabled,
+    &:disabled {
+      cursor: not-allowed;
+      opacity: @opacity;
+      color: @text-color;
+      background: none;
+      border: none;
+      box-shadow: none;
+
+      a& {
+        pointer-events: none;
+      }
+    }
+  }
+
+
+  &--main {
+    color: @white;
+    background-color: @color-main;
+    border: 1px solid @color-main;
+
+    &--hover,
+    &:hover {
+      color: @white;
+      background-color: darken(@color-main, 10%);
+      border-color: darken(@color-main, 12%);
+    }
+
+    &--active,
+    &:active {
+      color: @white;
+      background-color: darken(@color-main, 15%);
+      border-color: darken(@color-main, 17%);
+    }
+
+    &--disabled,
+    &:disabled {
+      color: @white;
+      background-color: @color-main;
+      border-color: @color-main;
+    }
+  }
+
+  &--danger {
+    color: @white;
+    background-color: @color-danger;
+    border: 1px solid @color-danger;
+
+    &--hover,
+    &:hover {
+      color: @white;
+      background-color: darken(@color-danger, 10%);
+      border-color: darken(@color-danger, 12%);
+    }
+
+    &--active,
+    &:active {
+      color: @white;
+      background-color: darken(@color-danger, 15%);
+      border-color: darken(@color-danger, 17%);
+    }
+
+    &--disabled,
+    &:disabled {
+      color: @white;
+      background-color: @color-danger;
+      border-color: @color-danger;
+    }
+  }
+
+  &--success {
+    color: @white;
+    background-color: @color-success;
+    border: 1px solid @color-success;
+
+    &--hover,
+    &:hover {
+      color: @white;
+      background-color: darken(@color-success, 10%);
+      border-color: darken(@color-success, 12%);
+    }
+
+    &--active,
+    &:active {
+      color: @white;
+      background-color: darken(@color-success, 15%);
+      border-color: darken(@color-success, 17%);
+    }
+
+    &--disabled,
+    &:disabled {
+      color: @white;
+      background-color: @color-success;
+      border-color: @color-success;
+    }
+  }
+
+  &--lg {
+    font-size: @font-size--h3;
+  }
+
+  &--sm {
+    font-size: @font-size--small;
+    padding-top: round((@field-padding-top / 2), 2);
+    padding-bottom: round((@field-padding-bottom / 2), 2);
+  }
+
+  &--block {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+
+    & + & {
+      margin-top: (@line-height / 2);
+    }
+  }
+}

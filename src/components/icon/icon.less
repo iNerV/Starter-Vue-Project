@@ -1,0 +1,28 @@
+@import '../../assets/less/variables.less';
+
+
+.icon {
+  display: inline-block;
+  fill: currentColor;
+
+  &--flip-horizontal {
+    transform: scale(-1, 1);
+  }
+
+  &--flip-vertical {
+    transform: scale(1, -1);
+  }
+
+  &--spin {
+    animation: fa-spin 1s 0s infinite linear;
+  }
+
+}
+@keyframes fa-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

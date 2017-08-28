@@ -1,0 +1,180 @@
+@import '../../assets/less/variables.less';
+
+.label {
+  display: inline-block;
+  position: relative;
+  margin: 0 0.1em;
+  vertical-align: baseline;
+  line-height: 1;
+  padding: 0.25em 0.4em 0.2em;
+  background-color: @gray-lighter;
+  color: @text-color;
+  text-decoration: none;
+  text-transform: none;
+  font-weight: 700;
+  font-size: 0.75em;
+  white-space: nowrap;
+  border-radius: @border-radius;
+
+  &:hover,
+  &:focus {
+    color: @text-color;
+    text-decoration: none;
+  }
+
+  svg {
+    fill: @text-color;
+  }
+
+  &__triangle-top {
+    &:after {
+      content: "";
+      position: absolute;
+      top: -5px;
+      border-width: 0 5px 5px;
+      border-style: solid;
+      border-color: @gray-lighter transparent;
+      display: block;
+    }
+    &--main {
+      &:after {
+        border-color: @color-main transparent;
+      }
+    }
+    &--danger {
+      &:after {
+        border-color: @color-danger transparent;
+      }
+    }
+    &--success {
+      &:after {
+        border-color: @color-success transparent;
+      }
+    }
+  }
+
+  &__triangle-right {
+    &:after {
+      content: "";
+      position: absolute;
+      right: -5px;
+      top: 20%;
+      border-width: 5px 0 5px 5px;
+      border-style: solid;
+      border-color: transparent @gray-lighter;
+      display: block;
+    }
+    &--main {
+      &:after {
+        border-color: transparent @color-main;
+      }
+    }
+    &--danger {
+      &:after {
+        border-color: transparent @color-danger;
+      }
+    }
+    &--success {
+      &:after {
+        border-color: transparent @color-success;
+      }
+    }
+  }
+
+  &__triangle-bottom {
+    &:after {
+      content: "";
+      position: absolute;
+      bottom: -5px;
+      border-width: 5px 5px 0;
+      border-style: solid;
+      border-color: @gray-lighter transparent;
+      display: block;
+    }
+    &--main {
+      &:after {
+        border-color: @color-main transparent;
+      }
+    }
+    &--danger {
+      &:after {
+        border-color: @color-danger transparent;
+      }
+    }
+    &--success {
+      &:after {
+        border-color: @color-success transparent;
+      }
+    }
+  }
+
+  &__triangle-left {
+    &:after {
+      content: "";
+      position: absolute;
+      left: -5px;
+      top: 20%;
+      border-width: 5px 5px 5px 0;
+      border-style: solid;
+      border-color: transparent @gray-lighter;
+      display: block;
+    }
+    &--main {
+      &:after {
+        border-color: transparent @color-main;
+      }
+    }
+    &--danger {
+      &:after {
+        border-color: transparent @color-danger;
+      }
+    }
+    &--success {
+      &:after {
+        border-color: transparent @color-success;
+      }
+    }
+  }
+
+  &--main {
+    background-color: @color-main;
+    color: #fff;
+
+    &:hover,
+    &:focus {
+      color: #fff;
+    }
+
+    svg {
+      fill: #fff;
+    }
+  }
+
+  &--danger {
+    background-color: @color-danger;
+    color: #fff;
+
+    &:hover,
+    &:focus {
+      color: #fff;
+    }
+
+    svg {
+      fill: #fff;
+    }
+  }
+
+  &--success {
+    background-color: @color-success;
+    color: #fff;
+
+    &:hover,
+    &:focus {
+      color: #fff;
+    }
+
+    svg {
+      fill: #fff;
+    }
+  }
+}

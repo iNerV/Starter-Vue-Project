@@ -1,0 +1,82 @@
+@import '../../assets/less/variables.less';     // только для удобства обращения к переменным
+
+
+//------------------------------------------------------------------------------
+//  Адаптивные таблицы (требуют наличия атрибутов data-label на тегах td)
+//------------------------------------------------------------------------------
+
+.table-responsive {
+  width: 100%;
+
+  @media (max-width: (@screen-md - 1)) {
+    display: block;
+    border: 0;
+
+    caption {
+      display: block;
+      width: 100%;
+      text-align: left;
+    }
+
+    thead {
+      display: none;
+    }
+
+    tbody {
+      display: block;
+      width: 100%;
+
+      tr {
+        display: block;
+        border: 1px solid @gray-lighter;
+        border-bottom: 0;
+
+        &:not(:last-child) {
+          margin-bottom: @line-height;
+        }
+      }
+
+      td {
+        display: block;
+        width: 100%;
+        border-right: 0 !important;
+        border-left: 0 !important;
+
+        &:before {
+          display: block;
+          font-weight: 700;
+          content: attr(data-label);
+        }
+      }
+    }
+  }
+
+  &--horizontal {
+
+    @media (max-width: (@screen-md - 1)) {
+
+      tbody {
+
+        td {
+          display: block;
+          width: 100%;
+          padding-left: 19rem;
+
+          &:before {
+            width: 18rem;
+            min-width: 18rem;
+            padding-right: 1rem;
+            float: left;
+            margin-left: -19rem + 0.6rem;
+          }
+
+          &:after {
+            content: '';
+            display: table;
+            clear: both;
+          }
+        }
+      }
+    }
+  }
+}

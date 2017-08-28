@@ -1,0 +1,9 @@
+table.table-responsive
+  thead
+    tr
+      th ID
+      th(v-for="key in columns", @click="sortBy(key)", :class="{ active: sortKey == key }") {{ key | capitalize }}
+  tbody
+    tr(v-for="entry, index in filteredData")
+      td {{ index+1 }}
+      td(v-for="key in columns", :data-label="key | capitalize") {{entry[key]}}
